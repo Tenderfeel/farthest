@@ -1,0 +1,40 @@
+/*
+@tailwindcss/forms が tailwind.config.js未対応なので
+ここで上書きする
+*/
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+  @apply bg-gray-800 border-gray-600;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-500;
+}
+
+.btn {
+  @apply text-gray-400;
+  @apply py-2 px-2;
+  @apply border border-transparent shadow-sm text-sm font-medium rounded-md;
+  @apply sm:px-4;
+}
+
+.btn-primary {
+  @apply bg-blue-900;
+}
+
+.btn-danger {
+  @apply bg-red-900;
+}

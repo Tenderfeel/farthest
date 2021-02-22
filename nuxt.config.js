@@ -16,6 +16,9 @@ const dynamicRoutes = getDynamicPaths(
 )
 
 export default {
+  // Auto-load components/
+  components: true,
+
   // ? The env Property: https://nuxtjs.org/api/configuration-env/
   env: {
     url:
@@ -57,7 +60,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/tailwind.css', '@/assets/css/main.pcss'],
+  css: [
+    //'@/assets/css/tailwind.css'
+    '@/assets/css/main.pcss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -65,7 +71,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxtjs/svg', '@nuxtjs/pwa'],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/svg', '@nuxtjs/pwa'],
   /*
    ** Nuxt.js modules
    */
@@ -77,7 +83,7 @@ export default {
    ** Build configuration
    */
   build: {
-    extractCSS: true,
+    // extractCSS: true,
     postcss: {
       plugins: {
         'postcss-import': postcssImport,
@@ -100,23 +106,13 @@ export default {
    ** Custom additions configuration
    */
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
+    //cssPath: '~/assets/css/tailwind.css',
     exposeConfig: false // enables `import { theme } from '~tailwind.config'`
   },
   purgeCSS: {
     mode: 'postcss',
     whitelist: ['dark-mode', 'light-mode', 'btn', 'icon', 'main'],
     whitelistPatterns: [/^article/, /image$/]
-  },
-  colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: COLOR_MODE_FALLBACK, // fallback value if not system preference found
-    componentName: 'ColorScheme',
-    cookie: {
-      options: {
-        sameSite: 'lax'
-      }
-    }
   },
   pwa: {
     icon: {

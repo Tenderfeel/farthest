@@ -3,9 +3,10 @@ a {
   @apply font-bold transition-colors duration-200 ease-in-out;
 }
 
-.title {
+.page-title {
   color: var(--color-primary);
-  @apply block font-bold text-5xl tracking-wide transition-colors duration-200 ease-in-out;
+  @apply block font-bold text-2xl tracking-wide transition-colors duration-200 ease-in-out;
+  @apply px-3 py-3;
 }
 
 .subtitle {
@@ -15,8 +16,8 @@ a {
 }
 
 .light-mode {
-  .title {
+  .page-title {
     color: var(--color-primary-600);
-    @apply block font-bold text-5xl tracking-wide transition-colors duration-200 ease-in-out;
+    @apply block font-bold text-2xl tracking-wide transition-colors duration-200 ease-in-out;
   }
 }
